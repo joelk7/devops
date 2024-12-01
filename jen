@@ -1,9 +1,10 @@
 pipeline {
-    agent any
-      }
+    agent any  // Runs on any available agent
+
     triggers {
-        pollSCM '* * * * *'
+        pollSCM('* * * * *')  // Polls SCM every minute
     }
+
     stages {
         stage('Build') {
             steps {
@@ -33,3 +34,4 @@ pipeline {
             }
         }
     }
+}
